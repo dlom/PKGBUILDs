@@ -26,7 +26,7 @@ fi
 git subtree split --prefix="$prefix" -b $branch
 
 # Generate .SRCINFO for each commit
-git filter-branch -f --tree-filter "mksrcinfo" -- $branch
+git filter-branch -f --tree-filter "mksrcinfo && sed /^#/d -i .SRCINFO" -- $branch
 
 # Push to aur and delete branch
 git push ssh://aur@aur.archlinux.org/${pkg_name}.git/ $branch:master
