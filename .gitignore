@@ -1,2 +1,5 @@
 */*
 !*/PKGBUILD
+
+# virtualhere-server-bin
+!virtualhere-server-bin/virtualhere.service
